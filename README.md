@@ -1,2 +1,1 @@
-# Musical Instrument Digital Interface
-# (maybe)
+# Musical Instrument Digital Interface (maybe)
