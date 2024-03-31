@@ -1,0 +1,6724 @@
+selected_tag:t=""
+bin_dump_file:t=""
+
+mission_settings{
+  player{
+    army:i=1
+    wing:t="A_dummy_plane_01"
+    wing:t="A_dummy_plane_02"
+    wing:t="A_dummy_plane_03"
+    wing:t="A_dummy_plane_04"
+    wing:t="A_dummy_plane_05"
+    wing:t="A_dummy_plane_06"
+    wing:t="A_dummy_plane_07"
+    wing:t="A_dummy_plane_08"
+    wing:t="A_dummy_plane_09"
+    wing:t="A_dummy_plane_10"
+    wing:t="A_dummy_plane_11"
+    wing:t="A_dummy_plane_12"
+    wing:t="A_dummy_plane_13"
+    wing:t="A_dummy_plane_14"
+    wing:t="A_dummy_plane_15"
+    wing:t="A_dummy_plane_16"
+    wing:t="A_dummy_plane_17"
+    wing:t="A_dummy_plane_18"
+    wing:t="A_dummy_plane_19"
+    wing:t="A_dummy_plane_20"
+    wing:t="A_dummy_plane_21"
+    wing:t="A_dummy_plane_22"
+    wing:t="A_dummy_plane_23"
+    wing:t="A_dummy_plane_24"
+    wing:t="A_dummy_plane_25"
+    wing:t="A_dummy_plane_26"
+    wing:t="A_dummy_plane_27"
+    wing:t="A_dummy_plane_28"
+    wing:t="A_dummy_plane_29"
+    wing:t="A_dummy_plane_30"
+    wing:t="A_dummy_plane_31"
+    wing:t="A_dummy_plane_32"
+  }
+
+  player_teamB{
+    army:i=2
+    wing:t="B_dummy_plane_01"
+    wing:t="B_dummy_plane_02"
+    wing:t="B_dummy_plane_03"
+    wing:t="B_dummy_plane_04"
+    wing:t="B_dummy_plane_05"
+    wing:t="B_dummy_plane_06"
+    wing:t="B_dummy_plane_07"
+    wing:t="B_dummy_plane_08"
+    wing:t="B_dummy_plane_09"
+    wing:t="B_dummy_plane_10"
+    wing:t="B_dummy_plane_11"
+    wing:t="B_dummy_plane_12"
+    wing:t="B_dummy_plane_13"
+    wing:t="B_dummy_plane_14"
+    wing:t="B_dummy_plane_15"
+    wing:t="B_dummy_plane_16"
+    wing:t="B_dummy_plane_17"
+    wing:t="B_dummy_plane_18"
+    wing:t="B_dummy_plane_19"
+    wing:t="B_dummy_plane_20"
+    wing:t="B_dummy_plane_21"
+    wing:t="B_dummy_plane_22"
+    wing:t="B_dummy_plane_23"
+    wing:t="B_dummy_plane_24"
+    wing:t="B_dummy_plane_25"
+    wing:t="B_dummy_plane_26"
+    wing:t="B_dummy_plane_27"
+    wing:t="B_dummy_plane_28"
+    wing:t="B_dummy_plane_29"
+    wing:t="B_dummy_plane_30"
+    wing:t="B_dummy_plane_31"
+    wing:t="B_dummy_plane_32"
+  }
+
+  mission{
+    type:t="teamBattle"
+    level:t="levels/iwo_jima.bin"
+    environment:t="Day"
+    weather:t="hazy"
+    locName:t="Test template"
+    locDesc:t="Test template"
+    gt_mp_tickets:b=yes
+    scoreLimit:i=25000
+    timeLimit:i=20
+    deathPenaltyMul:r=0
+    allowEmptyTeams:b=yes
+  }
+
+  atmosphere{
+    pressure:r=1013
+    temperature:r=30
+  }
+}
+
+imports{}
+triggers{
+  isCategory:b=yes
+  is_enabled:b=yes
+
+  A_TRIGGERS_SPAWN{
+    isCategory:b=yes
+    is_enabled:b=yes
+
+    A_Trigger_Spawn_Char_Cibles{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{}
+      actions{
+        missionMarkAsRespawnPoint{
+          loc_name:t="Spawn Char Cibles"
+          spawnEffect:b=no
+          isStrictSpawn:b=no
+          resetStrictSpawnIndex:b=no
+          isAirfield:b=no
+          isUnit:b=no
+          forceCreate:b=no
+          useExisting:b=no
+          ignoreTeamsOnReuse:b=no
+          isIndividual:b=no
+          onlyOnePlayerPerSpawnPoint:b=no
+          removeAreas:b=no
+          replaceAreas:b=no
+          canSpawnOnNeutral:b=no
+          showOnMap:b=yes
+          radius:r=-1
+          target:t="A_Zone_Respawn_Cibles"
+          team:t="A"
+
+          tags{
+            air:b=yes
+            helicopter:b=yes
+            type_attack_helicopter:b=yes
+            type_utility_helicopter:b=yes
+            tank:b=yes
+            type_heavy_tank:b=yes
+            type_medium_tank:b=yes
+            type_light_tank:b=yes
+            type_tank_destroyer:b=yes
+            type_spaa:b=yes
+            artillery:b=yes
+            aaa:b=yes
+            ship:b=yes
+            boat:b=yes
+            type_frigate:b=yes
+            type_destroyer:b=yes
+            type_light_cruiser:b=yes
+            type_heavy_cruiser:b=yes
+            type_battlecruiser:b=yes
+            type_battleship:b=yes
+            walker:b=yes
+          }
+        }
+      }
+
+      else_actions{}
+    }
+  }
+
+  B_TRIGGERS_SPAWN{
+    isCategory:b=yes
+    is_enabled:b=yes
+
+    B_Trigger_Spawn_Char_Cibles{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{}
+      actions{
+        missionMarkAsRespawnPoint{
+          loc_name:t="Spawn Char Cibles"
+          spawnEffect:b=no
+          isStrictSpawn:b=no
+          resetStrictSpawnIndex:b=no
+          isAirfield:b=no
+          isUnit:b=no
+          forceCreate:b=no
+          useExisting:b=no
+          ignoreTeamsOnReuse:b=no
+          isIndividual:b=no
+          onlyOnePlayerPerSpawnPoint:b=no
+          removeAreas:b=no
+          replaceAreas:b=no
+          canSpawnOnNeutral:b=no
+          showOnMap:b=yes
+          radius:r=-1
+          target:t="B_Zone_Respawn_Cibles"
+          team:t="B"
+
+          tags{
+            air:b=yes
+            airfield_take_off:b=yes
+            helicopter:b=yes
+            type_attack_helicopter:b=yes
+            type_utility_helicopter:b=yes
+            tank:b=yes
+            type_heavy_tank:b=yes
+            type_medium_tank:b=yes
+            type_light_tank:b=yes
+            type_tank_destroyer:b=yes
+            type_spaa:b=yes
+            artillery:b=yes
+            aaa:b=yes
+            ship:b=yes
+            boat:b=yes
+            type_frigate:b=yes
+            type_destroyer:b=yes
+            type_light_cruiser:b=yes
+            type_heavy_cruiser:b=yes
+            type_battlecruiser:b=yes
+            type_battleship:b=yes
+            walker:b=yes
+          }
+        }
+      }
+
+      else_actions{}
+    }
+  }
+
+  C_TRIGGERS{
+    isCategory:b=yes
+    is_enabled:b=yes
+
+    C_Trigger_Respawn_Cibles{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenStatus{
+          object_type:t="isKilled"
+          check_objects:t="any"
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target_type:t="isAlive"
+          check_period:r=1
+          object:t="C_SQUAD_01_Cibles"
+        }
+      }
+
+      actions{
+        wait{
+          time:r=1
+        }
+
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="C_SQUAD_01_Cibles"
+          target:t="C_SQUAD_01_Cibles"
+          useForTriggerFiltered:b=yes
+        }
+      }
+
+      else_actions{}
+    }
+  }
+
+  "A+B_TRIGGERS"{
+    isCategory:b=yes
+    is_enabled:b=yes
+
+    "A+B_Trigger_Invincibilite"{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=0.2
+        }
+      }
+
+      conditions{
+        unitWhenInArea{
+          math:t="3D"
+          object_type:t="isAlive"
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          check_objects:t="any"
+          object:t="A_SQUAD_01"
+          object:t="B_SQUAD_01"
+          target:t="Zone_InvincibleTeams"
+        }
+      }
+
+      actions{
+        unitSetProperties{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          object:t="A_SQUAD_01"
+          object:t="B_SQUAD_01"
+          useForTriggerFiltered:b=yes
+          isImmortal:b=yes
+        }
+      }
+
+      else_actions{}
+    }
+
+    A_Trigger_Rearmement{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{}
+      actions{
+        missionMarkAsRearmZone{
+          army:i=1
+          area_name:t="A_Zone_Rearmement"
+          enabled:b=yes
+          restoreWhenNoAmmoLeft:b=no
+          hideMarkers:b=yes
+
+          tags{
+            tank:b=yes
+            type_heavy_tank:b=yes
+            type_medium_tank:b=yes
+            type_light_tank:b=yes
+            type_tank_destroyer:b=yes
+            type_spaa:b=yes
+            artillery:b=yes
+            aaa:b=yes
+          }
+        }
+      }
+
+      else_actions{}
+    }
+
+    B_Trigger_Rearmement{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{}
+      actions{
+        missionMarkAsRearmZone{
+          army:i=2
+          area_name:t="B_Zone_Rearmement"
+          enabled:b=yes
+          restoreWhenNoAmmoLeft:b=no
+          hideMarkers:b=yes
+
+          tags{
+            tank:b=yes
+            type_heavy_tank:b=yes
+            type_medium_tank:b=yes
+            type_light_tank:b=yes
+            type_tank_destroyer:b=yes
+            type_spaa:b=yes
+            artillery:b=yes
+            aaa:b=yes
+          }
+        }
+      }
+
+      else_actions{}
+    }
+  }
+}
+
+mission_objectives{
+  isCategory:b=yes
+  is_enabled:b=yes
+}
+
+variables{}
+dialogs{}
+airfields{}
+effects{}
+units{
+  armada{
+    name:t="A_dummy_plane_01"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-36502.4, 21621, -4030.85]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_02"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-36330.1, 21621, -4069.05]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_03"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-36157.7, 21621, -4107.26]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_04"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35991.6, 21621, -4144.1]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_01"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-36846.7, 21621, -5583.62]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_02"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-36658, 21621, -5625.46]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_03"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-36469.4, 21621, -5667.27]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_04"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-36280.6, 21621, -5709.11]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_05"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35753.4, 21621, -4196.9]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_06"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35515.2, 21621, -4249.71]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_07"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35277.1, 21621, -4302.5]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_08"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35039, 21621, -4355.29]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_09"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-34800.9, 21621, -4408.08]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_10"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-34562.7, 21621, -4460.87]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_11"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-34324.6, 21621, -4513.66]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_12"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-34086.5, 21621, -4566.45]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_13"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-33848.4, 21621, -4619.24]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_14"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-33610.3, 21621, -4672.03]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_15"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-33372.2, 21621, -4724.81]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_16"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-33134, 21621, -4777.6]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_17"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-32895.9, 21621, -4830.39]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_18"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-32657.7, 21621, -4883.2]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_19"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-32419.6, 21621, -4935.99]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_20"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-32181.5, 21621, -4988.78]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_21"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-31943.3, 21621, -5041.57]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_22"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-31705.2, 21621, -5094.36]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_23"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-31467.1, 21621, -5147.15]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_24"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-31229, 21621, -5199.94]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_25"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30990.9, 21621, -5252.73]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_26"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30752.7, 21621, -5305.52]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_27"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30514.6, 21621, -5358.31]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_28"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30276.5, 21621, -5411.1]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_29"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30038.4, 21621, -5463.89]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_30"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-29800.2, 21621, -5516.7]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_31"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-29544.4, 21621, -5573.41]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="A_dummy_plane_32"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-29288.5, 21621, -5630.14]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_05"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-36038.6, 21621, -5762.77]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_06"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35796.7, 21621, -5816.4]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_07"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35554.7, 21621, -5870.06]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_08"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35312.6, 21621, -5923.71]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_09"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-35070.6, 21621, -5977.37]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_10"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-34828.7, 21621, -6031]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_11"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-34586.7, 21621, -6084.66]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_12"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-34344.6, 21621, -6138.31]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_13"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-34102.6, 21621, -6191.97]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_14"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-33860.7, 21621, -6245.6]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_15"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-33618.7, 21621, -6299.26]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_16"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-33376.6, 21621, -6352.91]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_17"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-33134.6, 21621, -6406.57]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_18"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-32892.7, 21621, -6460.2]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_19"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-32650.7, 21621, -6513.86]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_20"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-32408.6, 21621, -6567.51]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_21"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-32166.6, 21621, -6621.17]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_22"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-31924.7, 21621, -6674.8]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_23"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-31682.7, 21621, -6728.46]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_24"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-31440.7, 21621, -6782.12]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_25"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-31198.6, 21621, -6835.76]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_26"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30956.7, 21621, -6889.41]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_27"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30714.7, 21621, -6943.06]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_28"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30472.7, 21621, -6996.72]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_29"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-30230.6, 21621, -7050.37]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_30"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-29988.7, 21621, -7104.01]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_31"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-29746.7, 21621, -7157.66]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="B_dummy_plane_32"
+    tm:m=[[-0.21644, 0, -0.976296] [0, 1, 0] [0.976296, 0, -0.21644] [-29504.7, 21621, -7211.32]]
+    unit_class:t="dummy_plane"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=4
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="C_SQUAD_01_Cibles"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-1507.76, 110.003, 934.082]]
+
+    props{
+      squad_members:t="C_WW2_01"
+      squad_members:t="C_WW2_02"
+      squad_members:t="C_WW2_03"
+      squad_members:t="C_WW2_04"
+      squad_members:t="C_WW2_05"
+      squad_members:t="C_WW2_06"
+      squad_members:t="C_WW2_07"
+      squad_members:t="C_WW2_08"
+      squad_members:t="C_WW2_09"
+      squad_members:t="C_WW2_10"
+      squad_members:t="C_WW2_11"
+      squad_members:t="C_WW2_12"
+      squad_members:t="C_WW2_13"
+      squad_members:t="C_WW2_14"
+      squad_members:t="C_WW2_15"
+      squad_members:t="C_WW2_16"
+      squad_members:t="C_WW2_17"
+      squad_members:t="C_WW2_18"
+      squad_members:t="C_WW2_19"
+      squad_members:t="C_WW2_20"
+      squad_members:t="C_WW2_21"
+      squad_members:t="C_WW2_22"
+      squad_members:t="C_WW2_23"
+      squad_members:t="C_WW2_24"
+      squad_members:t="C_WW2_25"
+      squad_members:t="C_WW2_26"
+      squad_members:t="C_WW2_27"
+      squad_members:t="C_WW2_28"
+      squad_members:t="C_WW2_29"
+      squad_members:t="C_WW2_30"
+      squad_members:t="C_WW2_31"
+      squad_members:t="C_WW2_32"
+      squad_members:t="C_WW2_33"
+      squad_members:t="C_WW2_34"
+      squad_members:t="C_WW2_35"
+      squad_members:t="C_WW2_36"
+      squad_members:t="C_WW2_37"
+      squad_members:t="C_WW2_38"
+      squad_members:t="C_WW2_39"
+      squad_members:t="C_WW2_40"
+      squad_members:t="C_WW2_41"
+      squad_members:t="C_WW2_42"
+      squad_members:t="C_WW2_43"
+      squad_members:t="C_WW2_44"
+      squad_members:t="C_WW2_45"
+      squad_members:t="C_WW2_46"
+      squad_members:t="C_WW2_47"
+      squad_members:t="C_WW2_48"
+      squad_members:t="C_WW2_49"
+      squad_members:t="C_WW2_50"
+      squad_members:t="C_WW2_51"
+      squad_members:t="C_WW2_52"
+      squad_members:t="C_WW2_53"
+      squad_members:t="C_WW2_54"
+      squad_members:t="C_WW2_55"
+      squad_members:t="C_WW2_56"
+      squad_members:t="C_WW2_57"
+      squad_members:t="C_WW2_58"
+      squad_members:t="C_WW2_59"
+      squad_members:t="C_WW2_60"
+      squad_members:t="C_WW2_61"
+      squad_members:t="C_WW2_62"
+      squad_members:t="C_WW2_63"
+      squad_members:t="C_WW2_64"
+      squad_members:t="C_WW2_65"
+      squad_members:t="C_WW2_66"
+      squad_members:t="C_WW2_67"
+      squad_members:t="C_WW2_68"
+      squad_members:t="C_WW2_69"
+      squad_members:t="C_WW2_70"
+      squad_members:t="C_WW2_71"
+      squad_members:t="C_WW2_72"
+      object_marking:i=0
+    }
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1518.7, 110.194, 5327.06]]
+    unit_class:t="jp_type_4_ho_ro"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_02"
+    tm:m=[[0.819199, 0, 0.573509] [0.00399254, 0.999976, -0.00570294] [-0.573495, 0.00696159, 0.81918] [1518.56, 110.194, 5336.04]]
+    unit_class:t="it_sherman_VII"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_03"
+    tm:m=[[-0.0167784, 0, 0.999859] [0, 1, 0] [-0.999859, 0, -0.0167784] [1518.43, 110.194, 5344.92]]
+    unit_class:t="jp_type_4_ho_ro"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  ships{
+    name:t="C_WW2_01"
+    tm:m=[[0.787092, 0, 0.616836] [0, 1, 0] [-0.616836, 0, 0.787092] [670.963, 110.005, -7563.9]]
+    unit_class:t="us_cruiser_baltimore_class_pittsburgh"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      attack_type:t="hold_fire"
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_02"
+    tm:m=[[0.616836, 4.65661e-10, -0.787092] [-0.00547942, 0.999976, -0.00429416] [0.787073, 0.00696159, 0.616821] [-2478.52, 110, -735.326]]
+    unit_class:t="ussr_pantsyr_s1"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_03"
+    tm:m=[[0.992726, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992726] [-2494.26, 110, -747.663]]
+    unit_class:t="ussr_pantsyr_s1"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="A_SQUAD_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-1591.72, 107.741, 1931.32]]
+
+    props{
+      squad_members:t="A_dummy_plane_01"
+      squad_members:t="A_dummy_plane_02"
+      squad_members:t="A_dummy_plane_03"
+      squad_members:t="A_dummy_plane_04"
+      squad_members:t="A_dummy_plane_05"
+      squad_members:t="A_dummy_plane_06"
+      squad_members:t="A_dummy_plane_07"
+      squad_members:t="A_dummy_plane_08"
+      squad_members:t="A_dummy_plane_09"
+      squad_members:t="A_dummy_plane_10"
+      squad_members:t="A_dummy_plane_11"
+      squad_members:t="A_dummy_plane_12"
+      squad_members:t="A_dummy_plane_13"
+      squad_members:t="A_dummy_plane_14"
+      squad_members:t="A_dummy_plane_15"
+      squad_members:t="A_dummy_plane_16"
+      squad_members:t="A_dummy_plane_17"
+      squad_members:t="A_dummy_plane_18"
+      squad_members:t="A_dummy_plane_19"
+      squad_members:t="A_dummy_plane_20"
+      squad_members:t="A_dummy_plane_21"
+      squad_members:t="A_dummy_plane_22"
+      squad_members:t="A_dummy_plane_23"
+      squad_members:t="A_dummy_plane_24"
+      squad_members:t="A_dummy_plane_25"
+      squad_members:t="A_dummy_plane_26"
+      squad_members:t="A_dummy_plane_27"
+      squad_members:t="A_dummy_plane_28"
+      squad_members:t="A_dummy_plane_29"
+      squad_members:t="A_dummy_plane_30"
+      squad_members:t="A_dummy_plane_31"
+      squad_members:t="A_dummy_plane_32"
+      object_marking:i=0
+    }
+  }
+
+  squad{
+    name:t="B_SQUAD_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-1157.88, 107.741, 1874.24]]
+
+    props{
+      squad_members:t="B_dummy_plane_01"
+      squad_members:t="B_dummy_plane_02"
+      squad_members:t="B_dummy_plane_03"
+      squad_members:t="B_dummy_plane_04"
+      squad_members:t="B_dummy_plane_05"
+      squad_members:t="B_dummy_plane_06"
+      squad_members:t="B_dummy_plane_07"
+      squad_members:t="B_dummy_plane_08"
+      squad_members:t="B_dummy_plane_09"
+      squad_members:t="B_dummy_plane_10"
+      squad_members:t="B_dummy_plane_11"
+      squad_members:t="B_dummy_plane_12"
+      squad_members:t="B_dummy_plane_13"
+      squad_members:t="B_dummy_plane_14"
+      squad_members:t="B_dummy_plane_15"
+      squad_members:t="B_dummy_plane_16"
+      squad_members:t="B_dummy_plane_17"
+      squad_members:t="B_dummy_plane_18"
+      squad_members:t="B_dummy_plane_19"
+      squad_members:t="B_dummy_plane_20"
+      squad_members:t="B_dummy_plane_21"
+      squad_members:t="B_dummy_plane_22"
+      squad_members:t="B_dummy_plane_23"
+      squad_members:t="B_dummy_plane_24"
+      squad_members:t="B_dummy_plane_25"
+      squad_members:t="B_dummy_plane_26"
+      squad_members:t="B_dummy_plane_27"
+      squad_members:t="B_dummy_plane_28"
+      squad_members:t="B_dummy_plane_29"
+      squad_members:t="B_dummy_plane_30"
+      squad_members:t="B_dummy_plane_31"
+      squad_members:t="B_dummy_plane_32"
+      object_marking:i=0
+    }
+  }
+
+  tankModels{
+    name:t="C_WW2_04"
+    tm:m=[[0.992727, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992727] [-2336.84, 110, -624.296]]
+    unit_class:t="germ_pzkpfw_Maus"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="C_WW2_05"
+    tm:m=[[0.787091, -6.93889e-18, 0.616836] [0.00429416, 0.999976, -0.00547942] [-0.555139, 0.00626543, 0.708366] [-2352.58, 110, -636.633]]
+    unit_class:t="p-400"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="airstrike"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetAir:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="ACE"
+        task:t="ATTACK_AIR"
+      }
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_06"
+    tm:m=[[0.616835, 0, -0.787091] [0, 1, 0] [0.787091, 0, 0.616835] [-2321.1, 110, -611.959]]
+    unit_class:t="ussr_pantsyr_s1"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_07"
+    tm:m=[[0.616155, 0, -0.787625] [0, 1, 0] [0.787625, 0, 0.616155] [-2059.88, 110, -572.409]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_08"
+    tm:m=[[-0.121248, 6.59855e-10, -0.992622] [-0.00691023, 0.999976, 0.000844079] [0.992598, 0.00696159, -0.121245] [-2047.56, 110, -588.161]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_09"
+    tm:m=[[-0.787624, 0, -0.616154] [0, 1, 0] [0.616154, 0, -0.787624] [-2035.23, 110, -603.914]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_10"
+    tm:m=[[0.992727, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992727] [-2415.55, 110, -685.98]]
+    unit_class:t="germ_pzkpfw_Maus"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_11"
+    tm:m=[[0.787092, -6.93889e-18, 0.616836] [0.00429416, 0.999976, -0.00547942] [-0.616821, 0.00696159, 0.787073] [-2431.29, 110, -698.317]]
+    unit_class:t="ussr_pantsyr_s1"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="C_WW2_12"
+    tm:m=[[0.616835, 0, -0.787091] [0, 1, 0] [0.787091, 0, 0.616835] [-2399.81, 110, -673.643]]
+    unit_class:t="p-400"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="airstrike"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetAir:b=yes
+
+      plane{
+        wing_formation:t="Line"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="ACE"
+        task:t="ATTACK_AIR"
+
+        targetDeviation{
+          trigger:t="machine gun"
+          limits:p2=0, 1
+          defaultVal:r=0.2
+        }
+      }
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_13"
+    tm:m=[[0.787092, 0, 0.616836] [0, 1, 0] [-0.616836, 0, 0.787092] [-2273.87, 110, -574.949]]
+    unit_class:t="ussr_pantsyr_s1"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  ships{
+    name:t="C_WW2_14"
+    tm:m=[[0.616836, 4.65661e-10, -0.787091] [-0.00547942, 0.999976, -0.00429416] [0.787073, 0.00696159, 0.616821] [4136, 110.003, -4361.26]]
+    unit_class:t="us_cruiser_baltimore_class_pittsburgh"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      attack_type:t="hold_fire"
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_15"
+    tm:m=[[0.992726, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992726] [-2258.13, 110, -562.612]]
+    unit_class:t="ussr_pantsyr_s1"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_16"
+    tm:m=[[0.616155, 0, -0.787625] [0, 1, 0] [0.787625, 0, 0.616155] [-1998.26, 110, -651.172]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_17"
+    tm:m=[[-0.121248, 3.29272e-10, -0.992622] [-0.00691023, 0.999976, 0.000844078] [0.992598, 0.00696159, -0.121245] [-1985.94, 110, -666.923]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_18"
+    tm:m=[[-0.787624, 0, -0.616154] [0, 1, 0] [0.616154, 0, -0.787624] [-1973.62, 110, -682.677]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  objectGroups{
+    name:t="Plaque_27"
+    tm:m=[[-0.47712, 0.220269, 0.605343] [0.170092, 0.961508, -0.215803] [-2.4874, -5.17133e-07, -1.96052] [-2183.14, 85.0203, -911.23]]
+    unit_class:t="det_af_concrete_wall_flat_roof_a"
+    objLayer:i=1
+
+    props{
+      army:i=2
+      active:b=yes
+    }
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_07"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1134.75, 110.194, 5327.06]]
+    unit_class:t="jp_type_4_ho_ro"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_08"
+    tm:m=[[0.819199, 0, 0.573509] [0.00399254, 0.999976, -0.00570294] [-0.573495, 0.00696159, 0.81918] [1134.61, 110.194, 5336.04]]
+    unit_class:t="it_sherman_VII"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_06"
+    tm:m=[[-0.0167784, 0, 0.999859] [0, 1, 0] [-0.999859, 0, -0.0167784] [1134.48, 110.194, 5344.92]]
+    unit_class:t="jp_type_4_ho_ro"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_12"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [941.073, 110.194, 5327.06]]
+    unit_class:t="jp_type_4_ho_ro"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_13"
+    tm:m=[[0.819199, 0, 0.573509] [0.00399254, 0.999976, -0.00570294] [-0.573495, 0.00696159, 0.81918] [940.933, 110.194, 5336.04]]
+    unit_class:t="it_sherman_VII"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_EX_11"
+    tm:m=[[-0.0167784, 0, 0.999859] [0, 1, 0] [-0.999859, 0, -0.0167784] [940.793, 110.194, 5344.92]]
+    unit_class:t="jp_type_4_ho_ro"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  objectGroups{
+    name:t="Plaque_28"
+    tm:m=[[11.0193, -3.38314e-07, 8.6357] [7.81671e-07, 1, 4.52022e-07] [-4.56363, -2.91744e-06, 5.82327] [-2270, 87.8414, -800]]
+    unit_class:t="det_af_concrete_wall_flat_roof_a"
+    objLayer:i=1
+
+    props{
+      army:i=2
+      active:b=yes
+    }
+  }
+
+  tankModels{
+    name:t="C_WW2_19"
+    tm:m=[[0.787092, 0, 0.616836] [0, 1, 0] [-0.616836, 0, 0.787092] [-2787.58, 110, -405.809]]
+    unit_class:t="ussr_t_34_85_d_5t"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_20"
+    tm:m=[[0.616836, 4.65661e-10, -0.787092] [-0.00547942, 0.999976, -0.00429416] [0.787073, 0.00696159, 0.616821] [-2756.09, 110, -381.135]]
+    unit_class:t="ussr_t_34_85_d_5t"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_21"
+    tm:m=[[0.992726, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992726] [-2771.83, 110, -393.472]]
+    unit_class:t="ussr_t_34_85_d_5t"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_25"
+    tm:m=[[0.787092, 0, 0.616836] [0, 1, 0] [-0.616836, 0, 0.787092] [-3095.99, 110, -12.2628]]
+    unit_class:t="ussr_t_34_85_d_5t"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_26"
+    tm:m=[[0.616836, 4.65661e-10, -0.787092] [-0.00547942, 0.999976, -0.00429416] [0.787073, 0.00696159, 0.616821] [-3064.51, 110, 12.4108]]
+    unit_class:t="ussr_t_34_85_d_5t"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_24"
+    tm:m=[[0.992726, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992726] [-3080.25, 110, 0.0739136]]
+    unit_class:t="ussr_t_34_85_d_5t"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_28"
+    tm:m=[[0.992727, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992727] [-2693.13, 110, -331.788]]
+    unit_class:t="germ_flarakrad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_29"
+    tm:m=[[0.787092, -6.93889e-18, 0.616836] [0.00429416, 0.999976, -0.00547942] [-0.616821, 0.00696159, 0.787073] [-2708.87, 110, -344.125]]
+    unit_class:t="germ_flarakrad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_27"
+    tm:m=[[0.616835, 0, -0.787091] [0, 1, 0] [0.787091, 0, 0.616835] [-2677.38, 110, -319.452]]
+    unit_class:t="germ_flarakrad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_33"
+    tm:m=[[0.992727, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992727] [-3001.54, 110, 61.7577]]
+    unit_class:t="germ_flarakrad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_34"
+    tm:m=[[0.787092, -6.93889e-18, 0.616836] [0.00429416, 0.999976, -0.00547942] [-0.616821, 0.00696159, 0.787073] [-3017.28, 110, 49.4206]]
+    unit_class:t="germ_flarakrad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_32"
+    tm:m=[[0.616835, 0, -0.787091] [0, 1, 0] [0.787091, 0, 0.616835] [-2985.8, 110, 74.0942]]
+    unit_class:t="germ_flarakrad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      use_search_radar:b=yes
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_31"
+    tm:m=[[0.992727, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992727] [-2614.42, 110, -270.105]]
+    unit_class:t="us_m4a3e2_76w_sherman_jumbo"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_35"
+    tm:m=[[0.787091, -6.93889e-18, 0.616836] [0.00429416, 0.999976, -0.00547942] [-0.616821, 0.00696159, 0.787073] [-2630.16, 110, -282.441]]
+    unit_class:t="us_m4a3e2_76w_sherman_jumbo"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_30"
+    tm:m=[[0.616835, 0, -0.787091] [0, 1, 0] [0.787091, 0, 0.616835] [-2598.67, 110, -257.768]]
+    unit_class:t="us_m4a3e2_76w_sherman_jumbo"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_39"
+    tm:m=[[0.992727, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992727] [-2922.83, 110, 123.441]]
+    unit_class:t="us_m4a3e2_76w_sherman_jumbo"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_40"
+    tm:m=[[0.787091, -6.93889e-18, 0.616836] [0.00429416, 0.999976, -0.00547942] [-0.616821, 0.00696159, 0.787073] [-2938.58, 110, 111.105]]
+    unit_class:t="us_m4a3e2_76w_sherman_jumbo"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_38"
+    tm:m=[[0.616835, 0, -0.787091] [0, 1, 0] [0.787091, 0, 0.616835] [-2907.09, 110, 135.778]]
+    unit_class:t="us_m4a3e2_76w_sherman_jumbo"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_37"
+    tm:m=[[0.787092, 0, 0.616836] [0, 1, 0] [-0.616836, 0, 0.787092] [-2551.45, 110, -220.758]]
+    unit_class:t="ussr_kv_220"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_41"
+    tm:m=[[0.616836, 4.65661e-10, -0.787091] [-0.00547942, 0.999976, -0.00429416] [0.787073, 0.00696159, 0.616821] [-2519.96, 110, -196.084]]
+    unit_class:t="ussr_kv_220"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_36"
+    tm:m=[[0.992726, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992726] [-2535.71, 110, -208.421]]
+    unit_class:t="ussr_kv_220"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_45"
+    tm:m=[[0.787092, 0, 0.616836] [0, 1, 0] [-0.616836, 0, 0.787092] [-2859.87, 110, 172.788]]
+    unit_class:t="ussr_kv_220"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_46"
+    tm:m=[[0.616836, 4.65661e-10, -0.787091] [-0.00547942, 0.999976, -0.00429416] [0.787073, 0.00696159, 0.616821] [-2828.38, 110, 197.462]]
+    unit_class:t="ussr_kv_220"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_44"
+    tm:m=[[0.992726, 0, -0.120389] [0, 1, 0] [0.120389, 0, 0.992726] [-2844.12, 110, 185.125]]
+    unit_class:t="ussr_kv_220"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_43"
+    tm:m=[[0.616155, 0, -0.787625] [0, 1, 0] [0.787625, 0, 0.616155] [-1705.45, 110, -295.139]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_47"
+    tm:m=[[-0.121248, 6.59855e-10, -0.992622] [-0.00691023, 0.999976, 0.000844079] [0.992598, 0.00696159, -0.121245] [-1693.12, 110, -310.892]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_42"
+    tm:m=[[-0.787624, 0, -0.616154] [0, 1, 0] [0.616154, 0, -0.787624] [-1680.8, 110, -326.644]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_51"
+    tm:m=[[0.616155, 0, -0.787625] [0, 1, 0] [0.787625, 0, 0.616155] [-1311.63, 110, 12.9372]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_52"
+    tm:m=[[-0.121248, 6.59855e-10, -0.992622] [-0.00691023, 0.999976, 0.000844079] [0.992598, 0.00696159, -0.121245] [-1299.31, 110, -2.81421]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_50"
+    tm:m=[[-0.787624, 0, -0.616154] [0, 1, 0] [0.616154, 0, -0.787624] [-1286.99, 110, -18.5656]]
+    unit_class:t="germ_pz_IV_L70"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_49"
+    tm:m=[[0.616155, 0, -0.787625] [0, 1, 0] [0.787625, 0, 0.616155] [-1643.83, 110, -373.901]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_53"
+    tm:m=[[-0.121248, 3.29272e-10, -0.992622] [-0.00691023, 0.999976, 0.000844078] [0.992598, 0.00696159, -0.121245] [-1631.51, 110, -389.655]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_48"
+    tm:m=[[-0.787624, 0, -0.616154] [0, 1, 0] [0.616154, 0, -0.787624] [-1619.18, 110, -405.407]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_57"
+    tm:m=[[0.616155, 0, -0.787625] [0, 1, 0] [0.787625, 0, 0.616155] [-1250.02, 110, -65.8231]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_58"
+    tm:m=[[-0.121248, 3.29272e-10, -0.992622] [-0.00691023, 0.999976, 0.000844078] [0.992598, 0.00696159, -0.121245] [-1237.7, 110, -81.5776]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_56"
+    tm:m=[[-0.787624, 0, -0.616154] [0, 1, 0] [0.616154, 0, -0.787624] [-1225.37, 110, -97.3301]]
+    unit_class:t="fr_arl_44"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_61"
+    tm:m=[[-0.616888, 0, 0.78705] [0, 1, 0] [-0.78705, 0, -0.616888] [-2445.78, 110, -1052.7]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_62"
+    tm:m=[[0.120323, 6.59855e-10, 0.992734] [0.00691102, 0.999976, -0.00083764] [-0.992711, 0.00696159, 0.12032] [-2458.11, 110, -1036.96]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_63"
+    tm:m=[[0.78705, 0, 0.616888] [0, 1, 0] [-0.616888, 0, 0.78705] [-2470.45, 110, -1021.22]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_64"
+    tm:m=[[-0.616888, 0, 0.78705] [0, 1, 0] [-0.78705, 0, -0.616888] [-2507.47, 110, -973.998]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_65"
+    tm:m=[[0.120323, 3.29272e-10, 0.992734] [0.00691102, 0.999976, -0.00083764] [-0.992711, 0.00696159, 0.12032] [-2519.8, 110, -958.258]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_60"
+    tm:m=[[0.78705, 0, 0.616888] [0, 1, 0] [-0.616888, 0, 0.78705] [-2532.14, 110, -942.516]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_69"
+    tm:m=[[-0.616888, 0, 0.78705] [0, 1, 0] [-0.78705, 0, -0.616888] [-2839.32, 110, -1361.12]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_70"
+    tm:m=[[0.120323, 6.59855e-10, 0.992734] [0.00691102, 0.999976, -0.00083764] [-0.992711, 0.00696159, 0.12032] [-2851.66, 110, -1345.38]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_68"
+    tm:m=[[0.78705, 0, 0.616888] [0, 1, 0] [-0.616888, 0, 0.78705] [-2864, 110, -1329.64]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_66"
+    tm:m=[[-0.616888, 0, 0.78705] [0, 1, 0] [-0.78705, 0, -0.616888] [-3193.51, 110, -1638.7]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_59"
+    tm:m=[[0.120323, 6.59855e-10, 0.992734] [0.00691102, 0.999976, -0.00083764] [-0.992711, 0.00696159, 0.12032] [-3205.85, 110, -1622.96]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_67"
+    tm:m=[[0.78705, 0, 0.616888] [0, 1, 0] [-0.616888, 0, 0.78705] [-3218.19, 110, -1607.22]]
+    unit_class:t="uk_skink_aa"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_72"
+    tm:m=[[-0.616888, 0, 0.78705] [0, 1, 0] [-0.78705, 0, -0.616888] [-2901.01, 110, -1282.41]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_55"
+    tm:m=[[0.120323, 3.29272e-10, 0.992734] [0.00691102, 0.999976, -0.00083764] [-0.992711, 0.00696159, 0.12032] [-2913.34, 110, -1266.67]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_71"
+    tm:m=[[0.78705, 0, 0.616888] [0, 1, 0] [-0.616888, 0, 0.78705] [-2925.68, 110, -1250.93]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_23"
+    tm:m=[[-0.616888, 0, 0.78705] [0, 1, 0] [-0.78705, 0, -0.616888] [-3255.2, 110, -1559.99]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_22"
+    tm:m=[[0.120323, 3.29272e-10, 0.992734] [0.00691102, 0.999976, -0.00083764] [-0.992711, 0.00696159, 0.12032] [-3267.53, 110, -1544.25]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="C_WW2_54"
+    tm:m=[[0.78705, 0, 0.616888] [0, 1, 0] [-0.616888, 0, 0.78705] [-3279.87, 110, -1528.51]]
+    unit_class:t="ussr_btr_zd"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="hold_fire"
+      targetAir:b=no
+      targetGnd:b=no
+      accuracy:r=0
+      effShootingRate:r=0
+    }
+
+    way{}
+  }
+
+  ships{
+    name:t="ships_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [153.723, 106.356, -4534.85]]
+    unit_class:t="us_aircraftcarrier_lexington"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      attack_type:t="hold_fire"
+    }
+
+    way{}
+  }
+}
+
+areas{
+  A_Zone_Respawn_Cibles{
+    type:t="Box"
+    tm:m=[[-17.9249, 0, 22.5329] [0, 28.7929, 0] [-68.9755, 0, -54.8697] [-2159.31, 97.8414, -941.904]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  A_Zone_Rearmement{
+    type:t="Box"
+    tm:m=[[-3442.57, 0, -2410.51] [0, 633.869, 0] [2268.04, 0, -3239.09] [-2399.53, -200.001, -604.284]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  Zone_A_Invincible{
+    type:t="Box"
+    tm:m=[[-3442.57, 0, -2410.51] [0, 633.869, 0] [2268.04, -0.000671941, -3239.09] [-2389.58, -219.493, -580.774]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  Zone_B_Invincible{
+    type:t="Box"
+    tm:m=[[-3442.57, 0, -2410.51] [0, 633.869, 0] [2268.04, -0.000671941, -3239.09] [-2375.64, -219.493, -591.464]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  Zone_InvincibleTeams{
+    type:t="Box"
+    tm:m=[[-3442.57, 0, -2410.51] [0, 633.869, 0] [2268.04, -0.000671941, -3239.09] [-2396.12, -219.493, -624.454]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  B_Zone_Respawn_Cibles{
+    type:t="Box"
+    tm:m=[[-17.9249, 0, 22.5329] [0, 28.7929, 0] [-68.9755, 0, -54.8697] [-2159.31, 97.8414, -941.904]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  B_Zone_Rearmement{
+    type:t="Box"
+    tm:m=[[-3442.57, 0, -2410.51] [0, 633.869, 0] [2268.04, 0, -3239.09] [-2320.22, -194.527, -637.584]]
+    objLayer:i=0
+
+    props{}
+  }
+}
+
+objLayers{
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+}
+
+wayPoints{}
