@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content>
-<title>Galaga '88</title>
+<title>MS Pacman (bootleg)</title>
 <link rel="stylesheet" href="https://www.retrogames.cc/css/app.css?202005">
 <script src="https://www.retrogames.cc/bower_components/jquery/dist/jquery.js"></script>
 
@@ -50,6 +50,12 @@
     </style>
 </head>
 <body style="background-color: #000;width:100%;height:100%">
+<script>
+    if (window.top == window) {
+        document.write('Loading...');
+        document.location.href = 'https://www.retrogames.cc/arcade-games/ms-pacman-bootleg.html';
+    }
+</script>
 <div style="width:auto;height:100%;max-width:100%;margin:0 auto;overflow:hidden">
 <div id="game">
 <div style="text-align:center">
@@ -329,7 +335,7 @@
             } else {
                 $.ajax({
                     type: 'POST',
-                    url: 'https://www.retrogames.cc/ajax/get-state',
+                    url: '/ajax/get-state',
                     data: {
                         id: id
                     },
@@ -352,7 +358,7 @@
             
             confirm("Are you sure?","", function() {
             
-                $.post('https://www.retrogames.cc/ajax/del-state', {'id':id}, function(ret) {
+                $.post('/ajax/del-state', {'id':id}, function(ret) {
                     self.closest('.state-item').remove();
                 });
             });
@@ -556,12 +562,12 @@
 
     });
     EJS_player = '#game';
-    EJS_gameUrl = 'mspacmab.zip';
-        EJS_core = 'arcade';
+    EJS_gameUrl = 'https://filesus3.retrogames.cc/rom/19/new/mspacmab.zip';
+        EJS_gameParentUrl = 'https://filesus3.retrogames.cc/rom/19/new/mspacman.zip';    EJS_core = 'arcade';
     EJS_biosUrl = '/bios/arcade.7z';
     EJS_onGameStart = function() {
         console.log('start');
-        $.post('https://www.retrogames.cc/ajax/start-game', {id:33542, rid:0}, function(ret) {});
+        $.post('/ajax/start-game', {id:9247, rid:0}, function(ret) {});
 
         $('.reveal-overlay, .reveal.without-overlay').appendTo(gameArea());
     };
@@ -602,7 +608,7 @@
     
 
     var getStatesFromDB = async function() {
-        let states = await stateDB.getAllFromIndex('states', 'game_id', 33542);
+        let states = await stateDB.getAllFromIndex('states', 'game_id', 9247);
         var content = loadModal.find('.content:eq(1)').text('');
         
         $.each(states.reverse(), function(i, state) {
@@ -621,7 +627,7 @@
     };
 
     var saveStateToDB = async function(screenshot, state) {
-        await stateDB.add('states', {game_id: 33542, 'state': state, 'screen': screenshot});
+        await stateDB.add('states', {game_id: 9247, 'state': state, 'screen': screenshot});
         $.toast({
             text : "Saved",
             bgColor : 'rgba(0,0,0,0.5)',
@@ -637,14 +643,14 @@
 
     var getStatesFromServer = function() {
         loadModal.loading();
-        var data = {'id':'27475'};
+        var data = {'id':'9023'};
                 data['old'] = 0;
                 if (gCurrentDisc) {
             data['current_disc'] = gCurrentDisc;
         }
         $.ajax({
             type: 'POST',
-            url: 'https://www.retrogames.cc/ajax/get-states',
+            url: '/ajax/get-states',
             data: data,
             dataType: 'json',
             success: function(ret) {
@@ -681,7 +687,7 @@
     var saveStateToServer = function(screenshot, state, currentDisc) {
         
         var formdata = new FormData();
-        formdata.append("id", '27475');
+        formdata.append("id", '9023');
         formdata.append("screen", new Blob([screenshot], {type:"application/octet-stream"}));
         formdata.append("state_file", new Blob([state], {type:"application/octet-stream"}));
         if (currentDisc) {
@@ -770,7 +776,7 @@
             });
             saving = 0;
         }, false);
-        xhr.open("POST", "https://www.retrogames.cc/ajax/save-state");
+        xhr.open("POST", "/ajax/save-state");
         xhr.send(formdata);
 
 
@@ -779,7 +785,7 @@
 
     var saveStateToLocal = function(screenshot, state) {
         if (typeof saveAs != 'undefined') {
-            saveAs(new Blob([state], {type:"application/octet-stream"}), 'galaga88.save');
+            saveAs(new Blob([state], {type:"application/octet-stream"}), 'mspacmab.save');
         }
     };
 
@@ -862,7 +868,7 @@
 
     
 </script>
-<script src="https://www.emulatorjs.com/loader.js" crossorigin></script>
+<script src="//www.emulatorjs.com/loader.js" crossorigin></script>
 <script>
 $(function() {
     setTimeout(function() {
@@ -888,7 +894,7 @@ $(function() {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
         js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
@@ -901,5 +907,5 @@ $(function() {
 
   gtag('config', 'UA-41540658-3');
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8b8896cd38fcc42d',t:'MTcyNDU1NzUyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';src='https://www.retrogames.cc/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8b88d07688b032ec',t:'MTcyNDU1OTg4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
