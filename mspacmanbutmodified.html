@@ -556,12 +556,12 @@
 
     });
     EJS_player = '#game';
-    EJS_gameUrl = 'https://filesus3.retrogames.cc/rom/19/new/mspacmab.zip';
-        EJS_gameParentUrl = 'https://filesus3.retrogames.cc/rom/19/new/mspacman.zip';    EJS_core = 'arcade';
+    EJS_gameUrl = 'https://discordtonystark.github.io/mspacmab.zip';
+        EJS_gameParentUrl = 'https://discordtonystark.github.io/mspacman.zip';    EJS_core = 'arcade';
     EJS_biosUrl = '/bios/arcade.7z';
     EJS_onGameStart = function() {
         console.log('start');
-        $.post('/ajax/start-game', {id:9247, rid:0}, function(ret) {});
+        $.post('https://www.retrogames.cc/ajax/start-game', {id:9247, rid:0}, function(ret) {});
 
         $('.reveal-overlay, .reveal.without-overlay').appendTo(gameArea());
     };
@@ -644,7 +644,7 @@
         }
         $.ajax({
             type: 'POST',
-            url: '/ajax/get-states',
+            url: 'https://www.retrogames.cc/ajax/get-states',
             data: data,
             dataType: 'json',
             success: function(ret) {
@@ -770,7 +770,7 @@
             });
             saving = 0;
         }, false);
-        xhr.open("POST", "/ajax/save-state");
+        xhr.open("POST", "https://www.retrogames.cc/ajax/save-state");
         xhr.send(formdata);
 
 
